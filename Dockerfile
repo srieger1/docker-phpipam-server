@@ -28,6 +28,7 @@ RUN echo "Alias /phpipam /var/www/phpipam/" >/etc/apache2/sites-available/phpipa
   sed -i.bak "s/define('BASE', \"\/\"/define('BASE', \"\/phpipam\/\"/g" /var/www/phpipam/config.php
 
 ADD start-services.sh /root/start-services.sh
+RUN chmod +x /root/start-services.sh
 
 CMD /root/start-services.sh
 
